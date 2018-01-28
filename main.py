@@ -19,9 +19,12 @@ SOFTWARE."""
 def userInput():
     print("Please type the phrase you want converted: ")
     phrase = input()
-    print("Please enter how many numbers you want your phrase shifted: ")
+    print("Please enter how many numbers you want your phrase shifted (0-26): ")
     shift = int(input())
-    caesar(phrase, shift)
+    if shift > 26 or shift < 0:
+        print("Please input a valid shift")
+    else:
+        caesar(phrase, shift)
 
 
 def caesar(phrase, shift):
@@ -159,7 +162,64 @@ def caesar(phrase, shift):
                 caesarPhrase.append(str((26 + shift) - 26))
             else:
                 caesarPhrase.append(str(26 + shift))
+        elif phrase[i] == " ":
+            caesarPhrase.append(phrase[i])
         i += 1
-    print(" ".join(caesarPhrase))
+    i = 0
+    while i < len(caesarPhrase):
+        if caesarPhrase[i] == "1":
+            caesarPhrase[i] = "a"
+        elif caesarPhrase[i] == "2":
+            caesarPhrase[i] = "b"
+        elif caesarPhrase[i] == "3":
+            caesarPhrase[i] = "c"
+        elif caesarPhrase[i] == "4":
+            caesarPhrase[i] = "d"
+        elif caesarPhrase[i] == "5":
+            caesarPhrase[i] = "e"
+        elif caesarPhrase[i] == "6":
+            caesarPhrase[i] = "f"
+        elif caesarPhrase[i] == "7":
+            caesarPhrase[i] = "g"
+        elif caesarPhrase[i] == "8":
+            caesarPhrase[i] = "h"
+        elif caesarPhrase[i] == "9":
+            caesarPhrase[i] = "i"
+        elif caesarPhrase[i] == "10":
+            caesarPhrase[i] = "j"
+        elif caesarPhrase[i] == "11":
+            caesarPhrase[i] = "k"
+        elif caesarPhrase[i] == "12":
+            caesarPhrase[i] = "l"
+        elif caesarPhrase[i] == "13":
+            caesarPhrase[i] = "m"
+        elif caesarPhrase[i] == "14":
+            caesarPhrase[i] = "n"
+        elif caesarPhrase[i] == "15":
+            caesarPhrase[i] = "o"
+        elif caesarPhrase[i] == "16":
+            caesarPhrase[i] = "p"
+        elif caesarPhrase[i] == "17":
+            caesarPhrase[i] = "q"
+        elif caesarPhrase[i] == "18":
+            caesarPhrase[i] = "r"
+        elif caesarPhrase[i] == "19":
+            caesarPhrase[i] = "s"
+        elif caesarPhrase[i] == "20":
+            caesarPhrase[i] = "t"
+        elif caesarPhrase[i] == "21":
+            caesarPhrase[i] = "u"
+        elif caesarPhrase[i] == "22":
+            caesarPhrase[i] = "v"
+        elif caesarPhrase[i] == "23":
+            caesarPhrase[i] = "w"
+        elif caesarPhrase[i] == "24":
+            caesarPhrase[i] = "x"
+        elif caesarPhrase[i] == "25":
+            caesarPhrase[i] = "y"
+        elif caesarPhrase[i] == "26":
+            caesarPhrase[i] = "z"
+        i += 1
+    print("".join(caesarPhrase))
 
 userInput()
