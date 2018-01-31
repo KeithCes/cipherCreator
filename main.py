@@ -17,14 +17,82 @@ SOFTWARE."""
 
 
 def userInput():
-    print("Please type the phrase you want converted: ")
-    phrase = input()
-    print("Please enter how many numbers you want your phrase shifted (0-26): ")
-    shift = int(input())
-    if shift > 26 or shift < 0:
-        print("Please input a valid shift")
-    else:
-        caesar(phrase, shift)
+    print("Please enter which cipher you would like to use: (CAESAR, ATBASH)")
+    cipherChoice = str(input()).upper()
+    if cipherChoice == "CAESAR":
+        print("Please type the phrase you want converted: ")
+        phrase = input()
+        print("Please enter how many numbers you want your phrase shifted (0-26): ")
+        shift = int(input())
+        if shift > 26 or shift < 0:
+            print("Please input a valid shift")
+        else:
+            caesar(phrase, shift)
+    elif cipherChoice == "ATBASH":
+        print("Please type the phrase you want converted: ")
+        phrase = input()
+        atbash(phrase)
+
+
+def atbash(phrase):
+    atbashPhrase = []
+    phrase.lower()
+    i = 0
+    while i < len(phrase):
+        if phrase[i] == "a":
+            atbashPhrase.append("z")
+        elif phrase[i] == "b":
+            atbashPhrase.append("y")
+        elif phrase[i] == "c":
+            atbashPhrase.append("x")
+        elif phrase[i] == "d":
+            atbashPhrase.append("w")
+        elif phrase[i] == "e":
+            atbashPhrase.append("v")
+        elif phrase[i] == "f":
+            atbashPhrase.append("u")
+        elif phrase[i] == "g":
+            atbashPhrase.append("t")
+        elif phrase[i] == "h":
+            atbashPhrase.append("s")
+        elif phrase[i] == "i":
+            atbashPhrase.append("r")
+        elif phrase[i] == "j":
+            atbashPhrase.append("q")
+        elif phrase[i] == "k":
+            atbashPhrase.append("p")
+        elif phrase[i] == "l":
+            atbashPhrase.append("o")
+        elif phrase[i] == "m":
+            atbashPhrase.append("n")
+        elif phrase[i] == "n":
+            atbashPhrase.append("m")
+        elif phrase[i] == "o":
+            atbashPhrase.append("l")
+        elif phrase[i] == "p":
+            atbashPhrase.append("k")
+        elif phrase[i] == "q":
+            atbashPhrase.append("j")
+        elif phrase[i] == "r":
+            atbashPhrase.append("i")
+        elif phrase[i] == "s":
+            atbashPhrase.append("h")
+        elif phrase[i] == "t":
+            atbashPhrase.append("g")
+        elif phrase[i] == "u":
+            atbashPhrase.append("f")
+        elif phrase[i] == "v":
+            atbashPhrase.append("e")
+        elif phrase[i] == "w":
+            atbashPhrase.append("d")
+        elif phrase[i] == "x":
+            atbashPhrase.append("c")
+        elif phrase[i] == "y":
+            atbashPhrase.append("b")
+        elif phrase[i] == "z":
+            atbashPhrase.append("a")
+        i += 1
+    print("".join(atbashPhrase))
 
 
 def caesar(phrase, shift):
