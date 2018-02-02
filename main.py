@@ -17,7 +17,8 @@ SOFTWARE."""
 
 
 def userInput():
-    print("Please enter which cipher you would like to use: (CAESAR, ATBASH)")
+    print("Please enter which cipher you would like to use: (CAESAR, ATBASH, \
+MORSE)")
     cipherChoice = str(input()).upper()
     if cipherChoice == "CAESAR":
         print("Please type the phrase you want converted: ")
@@ -32,6 +33,71 @@ def userInput():
         print("Please type the phrase you want converted: ")
         phrase = input()
         atbash(phrase)
+    elif cipherChoice == "MORSE":
+        print("Please type the phrase you want converted: ")
+        phrase = input()
+        morse(phrase)
+
+
+def morse(phrase):
+    morsePhrase = []
+    phrase.lower()
+    i = 0
+    while i < len(phrase):
+        if phrase[i] == "a":
+            morsePhrase.append(".-")
+        elif phrase[i] == "b":
+            morsePhrase.append("-...")
+        elif phrase[i] == "c":
+            morsePhrase.append("-.-.")
+        elif phrase[i] == "d":
+            morsePhrase.append("-..")
+        elif phrase[i] == "e":
+            morsePhrase.append(".")
+        elif phrase[i] == "f":
+            morsePhrase.append("..-.")
+        elif phrase[i] == "g":
+            morsePhrase.append("--.")
+        elif phrase[i] == "h":
+            morsePhrase.append("....")
+        elif phrase[i] == "i":
+            morsePhrase.append("..")
+        elif phrase[i] == "j":
+            morsePhrase.append(".---")
+        elif phrase[i] == "k":
+            morsePhrase.append("-.-")
+        elif phrase[i] == "l":
+            morsePhrase.append(".-..")
+        elif phrase[i] == "m":
+            morsePhrase.append("--")
+        elif phrase[i] == "n":
+            morsePhrase.append("-.")
+        elif phrase[i] == "o":
+            morsePhrase.append("---")
+        elif phrase[i] == "p":
+            morsePhrase.append(".--.")
+        elif phrase[i] == "q":
+            morsePhrase.append("--.-")
+        elif phrase[i] == "r":
+            morsePhrase.append(".-.")
+        elif phrase[i] == "s":
+            morsePhrase.append("...")
+        elif phrase[i] == "t":
+            morsePhrase.append("-")
+        elif phrase[i] == "u":
+            morsePhrase.append("..-")
+        elif phrase[i] == "v":
+            morsePhrase.append("...-")
+        elif phrase[i] == "w":
+            morsePhrase.append(".--")
+        elif phrase[i] == "x":
+            morsePhrase.append("-..-")
+        elif phrase[i] == "y":
+            morsePhrase.append("-.--")
+        elif phrase[i] == "z":
+            morsePhrase.append("--..")
+        i += 1
+    print(" ".join(morsePhrase))
 
 
 def atbash(phrase):
